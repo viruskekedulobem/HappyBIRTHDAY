@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #ffcc00; 
+            font-size: 3em;
+            text-align: center;
+            overflow: hidden;
+            position: relative; 
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.2; 
+            }
+        }
+
+        .dancing-monkey {
+            width: 200px;
+            margin: 20px auto;
+            animation: grow 3s infinite alternate;
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(6);
+            }
+        }
+
+        h1 {
+            position: relative;
+            animation: flash 0.5s infinite alternate;
+            z-index: 2;
+        }
+
+        .play {
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            margin-top: 20px; /* Add some space above the audio player */
+            z-index: 2; /* Ensure it's above the confetti */
+            position: relative; /* Required for stacking context */
+        }
+
+        .confetti {
+            width: 100%;
+            height: 100vh;
+            background: url('https://media.tenor.com/nVsVEfzCGQMAAAAi/confetti.gif') no-repeat center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>HAPPY BIRTHDAY! EWAN BASTA BIRTHDAY NI CHARMS</h1>
+    <div class="confetti"></div>
+    <img src="https://media.tenor.com/-LlG5WSoK74AAAAi/monkey.gif" alt="Dancing Monkey" class="dancing-monkey">
+
+    <div class="play">
+        <audio src="file:///C:/Users/micah/Downloads/Chipmunks%20%20%20Happy%20Birthday%20Song%20%20%20YouTube%20360p.mp3" controls></audio>
+    </div>
+</body>
+</html>
